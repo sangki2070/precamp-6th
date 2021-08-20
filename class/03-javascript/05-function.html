@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>Document</title>
+    <script>
+        let temp;
+
+        function auth(){
+            const getToken = String(Math.floor(Math.random() * 1000000)).padStart(6, "0")
+            document.getElementById("zzz").innerText = getToken
+            document.getElementById("zzz").style.backgroundColor = "#" + getToken
+
+            let timer = 180
+
+            temp = setInterval(() => {
+                // console.log("asdf")
+            if(timer >=0) {
+                const minutes = Math.floor(timer / 60)
+                const seconds = timer % 60
+                document.getElementById("time").innerText= minutes + ":" + seconds
+                // timer = minutes + ":" + seconds
+                timer -= 1
+                }
+            },1000)
+            document.getElementById("abc").disabled = true
+            
+        }
+
+        function done(){
+            document.getElementById("abc").disabled = false
+            clearInterval(temp)
+            document.getElementById("zzz").innerText = "000000"
+        }
+    </script>
+
+<!-- let timer = 180
+setInterval(() => {
+    if (timer >= 0){
+        const minutes = Math.floor(timer / 60)
+        const seconds = timer % 60
+        console.log(minutes + ":" + seconds)
+        timer -= 1
+    }
+}, 1000) -->
+
+</head>
+<body>
+    <span id="zzz" class="aaa">000000</span><button onclick="auth()" id="abc">인증번호 전송</button>
+    <div>
+        <span id="time">00</span><button onclick="done()">인증완료</button>    
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,46 @@
+body {
+    width: 200px;
+}
+
+.header {
+    height: 50px;
+}
+
+.wrapper__header {
+    height: 130px;
+}
+
+.wrapper__body {
+    display: flex;
+    flex-direction: column;
+}
+
+.body__a {
+    display: flex;
+    flex-direction: column;
+    width: 180px;
+    height: 130px;
+    justify-content: space-between;
+}
+
+.phone {
+    display: flex;
+    justify-content: space-around;
+    width: 180px;
+}
+
+/* 인증번호 부분 */
+.wrapper__middle {
+    width: 200px;
+    height: 150px;
+}
+.auth {
+    display: flex;
+    justify-content: space-around;
+    width: 180px;
+}
+
+.auth__result {
+    display: flex;
+    justify-content: space-around;
+}

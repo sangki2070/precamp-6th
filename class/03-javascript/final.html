@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>회원가입</title>
+    <link rel="stylesheet" href="./final.css">
+
+    <script>
+        function emailAuth(){
+            const email = document.getElementById("email").value
+
+            if(email !== email.includes("@")){
+                documet.getElementById("aaa").value = "이메일이 올바르지 않습니다."
+
+            } else {
+
+            }
+        }
+
+        function changePhone(){
+            const phone1 = document.getElementById("phone1").value
+
+            if(phone1.length === 3){
+                document.getElementById("phone2").focus()
+            }
+        }
+
+        function changePhone2(){
+            const phone2 = document.getElementById("phone2").value
+
+            if(phone2.length === 4){
+                document.getElementById("phone3").focus()
+            }
+        }
+
+        function phoneAuth(){
+            const getToken = String(Math.floor(Math.random() * 1000000)).padStart(6, "0")
+            document.getElementById("zzz").innerText = getToken
+
+            let timer = 180
+            temp = setInterval(() => {
+            if(timer >=0) {
+                const minutes = Math.floor(timer / 60)
+                const seconds = timer % 60
+                document.getElementById("time").innerText= minutes + ":" + seconds
+                timer -= 1
+                }
+            },1000)
+            // document.getElementById("abc").disabled = true
+            
+        }
+
+    </script>
+</head>
+<body>
+
+    <div class="header">회원가입</div>
+    
+
+    <!-- 정보입력 부분 -->
+    <div class="wrapper__header">
+        <div class="body__a">
+            <input id="email" type="text" placeholder="이메일을 입력해 주세요.">
+            <div id="aaa">   yhyuyyjuyu</div>
+            <input type="text" placeholder="이름을 입력해 주세요">
+            <input type="password" placeholder="비밀번호를 입력해 주세요">
+            <input type="password" placeholder="비밀번호를 다시 입력해 주세요">
+            <div class="phone">
+                <input id="phone1" type="text" size="3" onchange="changePhone()" onkeyup="onchange()"> - 
+                <input id="phone2" type="text" size="4"onchange="changePhone2()" onkeyup="onchange()"> - 
+                <input id="phone3" type="text" size="4">
+            </div>
+        </div>
+        
+        
+    </div>
+    <!-- 인증번호 부분 -->
+    <div class="wrapper__middle">
+        <div class="auth">
+            <div id="zzz">000000</div>
+            <button onclick="phoneAuth()">인증번호전송</button>
+        </div>
+        <div class="auth__result">
+            <div id="time" onclick="phoneAuth()">3:00</div>
+            <button>인증확인</button>
+        </div>
+
+        <div>
+            <select class="land">
+                <option>지역을 선택하세요.</option>
+                <!-- <option>슬픔 😭</option>
+                <option>분노 😡</option>
+                <option>행복 😊</option> -->
+            </select>
+        </div>
+    
+    
+        <div>
+            <div>
+                <input type="radio"> 여성
+                <input type="radio"> 남성
+            </div>
+    </div>
+   
+        <div>
+            <input type="checkbox"> 이용약관 개인정보 수집 및 이용, 마케팅 활용 선택에 모두 동의합니다.
+        </div>
+    </div>
+
+    <div>
+        <button onclick="emailAuth()">가입하기</button>
+    </div>
+
+</body>
+</html>
